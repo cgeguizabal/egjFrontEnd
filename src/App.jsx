@@ -3,7 +3,7 @@ import "./App.css";
 import Home from "./pages/Home";
 import { useSession, useUser } from "@clerk/clerk-react";
 import { useEffect, useState } from "react";
-import { getUser } from "./assets/API/Services/UserInstance";
+import { getUser } from "./assets/API/Services/UserServices";
 import useAuthStore from "./store/auth";
 // import Navbar from "./components/NavBar";
 function App() {
