@@ -1,10 +1,13 @@
 import { useClerk, useUser, UserButton, useSession } from "@clerk/clerk-react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaBook } from "react-icons/fa";
 import navBar from "../styles/components/navBar.module.scss";
+import useAuthStore from "../store/auth";
 
 const Navbar = () => {
+  const currentUser = useAuthStore((state) => state.currentUser);
+
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Tour Expeditions", path: "/tour" },
@@ -13,18 +16,11 @@ const Navbar = () => {
     { name: "Contact", path: "/" },
   ];
 
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // const [isScrolled, setIsScrolled] = useState(false);
+  // const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const { openSignIn } = useClerk();
   const { user } = useUser();
-  const { session } = useSession();
-
-  console.log("Session:", session.getToken());
-  console.log("User ID", user.id);
-  session.getToken().then((token) => {
-    console.log("JWT Token:", token);
-  });
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -36,10 +32,6 @@ const Navbar = () => {
   //   window.addEventListener("scroll", handleScroll);
   //   return () => window.removeEventListener("scroll", handleScroll);
   // }, []);
-
-  // const UserData = localStorage.getItem("auth-storage");
-  // const UserRole = JSON.parse(UserData).state.user.role;
-  // console.log("UserRole:", UserRole);
 
   return (
     <div className={navBar.navbar_container}>
@@ -60,7 +52,7 @@ const Navbar = () => {
 
         {/* Desktop Right, Clerk User button */}
         <div className={navBar.nav_right}>
-          {user && (
+          {currentUser?.role === "Admin" && (
             <button className={navBar.button_dashboard}>Dashboard</button>
           )}
           <button className={navBar.button_book}>Book Now</button>
