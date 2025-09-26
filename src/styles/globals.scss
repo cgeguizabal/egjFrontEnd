@@ -1,0 +1,27 @@
+@use "./variables.scss";
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --Primary-colour: #7ea15b;
+  --Secondary-colour: #f4eed9;
+}
+
+html {
+  font-size: 75%; /* 16px × 0.75 = 12px */ // So Clerk's UI isn't affected much
+
+  min-height: 100vh;
+}
+
+body {
+  font-family: "Karla", sans-serif;
+  font-size: 1.6rem;
+
+  min-height: 100vh;
+}

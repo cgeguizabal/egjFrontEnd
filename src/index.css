@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #7ea15b;
+  --color-secondary: #f0c02d;
+}
+
+* {
+  font-family: "Robotoo", sans-serif;
+}
+
+.font-noto {
+  font-family: "Noto Sans", sans-serif;
+}
