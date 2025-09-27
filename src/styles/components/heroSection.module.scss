@@ -1,0 +1,70 @@
+.hero_section {
+  grid-column: 2 / 10;
+  grid-row: 2 / 4;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  color: var(--Secondary-colour);
+
+  font-size: 3.8rem;
+  font-weight: 700;
+  box-shadow: 0 12px 40px 5px rgba(0, 0, 0, 0.25);
+  font-family: chivo, sans-serif;
+  letter-spacing: 0.5rem;
+}
+
+.highlight {
+  background: linear-gradient(to top, #1e9146, #79a81c, #7ea15b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* for Firefox */
+  color: transparent;
+  box-shadow: 0 12px 40px 5px rgba(0, 0, 0, 0.25);
+  font-family: chivo, sans-serif;
+
+  &_2 {
+    color: #f0c02d;
+    margin-left: 1rem;
+  }
+}
+
+.subtitle {
+  color: var(--Secondary-colour);
+
+  font-size: 1.8rem;
+  font-weight: 500;
+
+  text-align: center;
+  max-width: 600px;
+}
+
+.hr {
+  border: none;
+  height: 5px; /* thickness of the line */
+  background: linear-gradient(to right, transparent, white, transparent);
+  width: 50%; /* or 100% */
+  margin: 1rem auto; /* center it */
+}
+
+.button {
+  background: linear-gradient(to right, #1e9146, #79a81c, #7ea15b);
+  padding: 0.417rem 1.25rem;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  color: var(--Secondary-colour);
+  box-shadow: 0 12px 40px 5px rgba(0, 0, 0, 0.25);
+  margin-top: 1rem;
+
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    background: var(--Primary-colour);
+    transform: scale(1.1);
+  }
+}

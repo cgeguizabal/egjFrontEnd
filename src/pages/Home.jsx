@@ -5,10 +5,10 @@ import Navbar from "../components/NavBar";
 function Home() {
   return (
     <>
-      <div className={home.home_container}>
-        <Navbar />
-        <h1>HERO SECTION</h1>
-      </div>
+      <main className={`${home.home_container} grid-container`}>
+        <Navbar className={`${home.navbar}`} />
+        <Hero />
+      </main>
     </>
   );
 }

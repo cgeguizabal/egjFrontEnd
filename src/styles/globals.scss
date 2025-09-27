@@ -14,7 +14,7 @@
 }
 
 html {
-  font-size: 75%; /* 16px × 0.75 = 12px */ // So Clerk's UI isn't affected much
+  font-size: 85%; /* 16px × 0.75 = 12px */ // So Clerk's UI isn't affected much
 
   min-height: 100vh;
 }
@@ -24,4 +24,22 @@ body {
   font-size: 1.6rem;
 
   min-height: 100vh;
+}
+
+.grid-container {
+  display: grid;
+
+  gap: 2rem;
+  margin: 0 auto;
+  min-height: 100vh;
+
+  grid-template-columns:
+    [full-start]minmax(6rem, 1fr)
+    [center-start] repeat(8, [col-start] minmax(8rem, 12rem) [col-end])
+    [center-end] minmax(6rem, 1fr) [full-end];
+
+  grid-template-rows:
+    [full-start] minmax(6rem, 1fr)
+    [center-start] repeat(18, [row-start] minmax(8rem, auto) [row-end])
+    [center-end] minmax(2rem, 1fr) [full-end];
 }
