@@ -13,7 +13,7 @@
 
   font-size: 3.8rem;
   font-weight: 700;
-  box-shadow: 0 12px 40px 5px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 12px 40px 5px rgba(0, 0, 0, 0.25);
   font-family: chivo, sans-serif;
   letter-spacing: 0.5rem;
 }
@@ -24,7 +24,7 @@
   -webkit-text-fill-color: transparent;
   background-clip: text; /* for Firefox */
   color: transparent;
-  box-shadow: 0 12px 40px 5px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 12px 40px 5px rgba(0, 0, 0, 0.25);
   font-family: chivo, sans-serif;
 
   &_2 {
@@ -35,6 +35,7 @@
 
 .subtitle {
   color: var(--Secondary-colour);
+  text-shadow: 0 12px 40px 5px rgba(0, 0, 0, 0.25);
 
   font-size: 1.8rem;
   font-weight: 500;

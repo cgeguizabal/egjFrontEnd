@@ -5,6 +5,7 @@ import { useSession, useUser } from "@clerk/clerk-react";
 import { useEffect, useState } from "react";
 import { getUser } from "./assets/API/Services/UserServices";
 import useAuthStore from "./store/auth";
+import Footer from "./components/Footer";
 // import Navbar from "./components/NavBar";
 function App() {
   const [token, setToken] = useState(null);
@@ -52,6 +53,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
         </Routes>
+        <Footer />
       </div>
     </>
   );
