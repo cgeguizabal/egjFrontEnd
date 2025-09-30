@@ -7,6 +7,9 @@ import {
 import { FaTripadvisor } from "react-icons/fa";
 import footer from "../styles/components/footer.module.scss";
 
+import { MdEmail } from "react-icons/md";
+import { IoLogoWhatsapp } from "react-icons/io";
+
 function Footer() {
   return (
     <footer className={footer.footer_container}>
@@ -17,40 +20,78 @@ function Footer() {
         </div>
         <hr className={footer.separator} />
         <div>
-          <h4>Quick Links</h4>
-          <ul>
-            <li>Home</li>
-            <li>Tour Expeditions</li>
-            <li>Experience</li>
-            <li>About</li>
-            <li>Refund Policy</li>
-            <li>Privacy Policy</li>
-            <li>Contact</li>
-          </ul>
+          <h4 className={footer.quick_links_title}>Quick Links</h4>
+          <div className={footer.quick_links_container}>
+            <ul className={footer.quick_links}>
+              <li>Home</li>
+              <li>Tour Expeditions</li>
+              <li>Experience</li>
+            </ul>
+            <ul className={footer.quick_links}>
+              <li>Refund Policy</li>
+              <li>Privacy Policy</li>
+              <li>About</li>
+            </ul>
+          </div>
         </div>
-        <hr />
+        <hr className={footer.separator} />
         <div>
-          <h4>Follow Us</h4>
-          <FaTripadvisor />
+          <h4 className={footer.quick_links_title}>Follow Us</h4>
+          <div className={footer.social_media_icons_container}>
+            <div className={footer.social_media_icons}>
+              <ul>
+                <li>
+                  <FaTripadvisor />
+                </li>
+                <li>
+                  <FaLinkedin />
+                </li>
+              </ul>
+            </div>
 
-          <FaLinkedin />
-
-          <FaSquareInstagram />
-          <FaSquareFacebook />
-          <FaSquareYoutube />
+            <div className={footer.social_media_icons}>
+              <ul>
+                <li>
+                  <FaSquareFacebook />
+                </li>
+                <li>
+                  <FaSquareYoutube />
+                </li>
+              </ul>
+            </div>
+            <div className={footer.social_media_icons}>
+              <ul>
+                <li>
+                  <FaSquareInstagram />
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
+        <hr className={footer.separator} />
         <div>
-          <h4>Contact Us</h4>
+          <h4 className={footer.quick_links_title}>Contact Us</h4>
+          <div className={footer.contact_us}>
+            <ul>
+              <li className={footer.contact_us_item}>
+                <MdEmail /> expeditionsgeorgeofthejungle@gmail.com
+              </li>
+              <li className={footer.contact_us_item}>
+                <IoLogoWhatsapp />+ 57 (317) 529-9539{" "}
+              </li>
+            </ul>
+          </div>
+          {/* 
           <ul>
-            <li> Email: expeditionsgeorgeofthejungle@gmail.com </li>
-            <li> Phone (Colombia): +57-320-899-6144 & + 57 (317) 529-9539 </li>
-            <li> Phone (USA): +1 (680) 214-5633</li>
-          </ul>
+              <li>Email: expeditionsgeorgeofthejungle@gmail.com </li>
+              <li>Phone (Colombia): +57-320-899-6144 & + 57 (317) 529-9539 </li>
+              <li>Phone (USA): +1 (680) 214-5633</li>
+            </ul> */}
         </div>
       </div>
-      <hr />
-      <div>
-        <p>
+      <hr className={footer.separator_full} />
+      <div className={footer.copyright_container}>
+        <p className={footer.copyright_text}>
           ©2022 COPYRIGHT. EXPEDITIONS GEORGE OF THE JUNGLE ALL RIGHTS RESERVED
         </p>
       </div>

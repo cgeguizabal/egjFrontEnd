@@ -1,6 +1,6 @@
 .navbar {
-  // Glassmorphism effect
   grid-column: 3 / span 8; // centers the navbar in a 12-column grid
+  // Glassmorphism effect
   background: rgba(20, 20, 20, 0.05);
   background: linear-gradient(
     135deg,
@@ -13,8 +13,9 @@
     inset 0 0 5px 3px rgba(255, 255, 255, 0.1);
 
   // General styling
-  max-width: 83.33rem; // 100rem × 0.8333
-  min-width: 66.67rem; // 80rem × 0.8333
+
+  max-width: 80rem; // 100rem × 0.8333
+  min-width: 71rem; // 80rem × 0.8333
   height: 5.833rem; // 7rem × 0.8333
   margin-top: 1.667rem; // 2rem × 0.8333
   border-radius: 0.833rem; // 1rem × 0.8333
@@ -49,7 +50,7 @@
     height: 7.5rem; // 9rem × 0.8333
     display: flex;
     justify-content: center;
-    grid-column: 3 / 9;
+    grid-column: 2 / -2;
 
     background: none;
   }
