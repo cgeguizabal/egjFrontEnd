@@ -2,6 +2,7 @@ import Hero from "../components/Hero";
 import home from "../styles/pages/home.module.scss";
 import Navbar from "../components/NavBar";
 import VideoSection from "../components/VideoSection";
+import TravelWithUsSection from "../components/TravelWithUsSection";
 
 function Home() {
   return (
@@ -10,6 +11,7 @@ function Home() {
         <Navbar className={`${home.navbar}`} />
         <Hero />
         <VideoSection />
+        <TravelWithUsSection />
       </main>
     </>
   );
