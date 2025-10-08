@@ -42,5 +42,5 @@ body {
   grid-template-rows:
     [full-start] minmax(6rem, 1fr)
     [center-start] repeat(18, [row-start] minmax(8rem, auto) [row-end])
-    [center-end] minmax(2rem, 1fr) [full-end];
+    [center-end] minmax(1.5rem, 1fr) [full-end];
 }

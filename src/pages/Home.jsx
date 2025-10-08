@@ -3,6 +3,7 @@ import home from "../styles/pages/home.module.scss";
 import Navbar from "../components/NavBar";
 import VideoSection from "../components/VideoSection";
 import TravelWithUsSection from "../components/TravelWithUsSection";
+import BePartOfUs from "../components/BePartOfUs";
 
 function Home() {
   return (
@@ -12,6 +13,7 @@ function Home() {
         <Hero />
         <VideoSection />
         <TravelWithUsSection />
+        <BePartOfUs />
       </main>
     </>
   );
