@@ -15,7 +15,7 @@
   // General styling
 
   max-width: 80rem; // 100rem × 0.8333
-  min-width: 71rem; // 80rem × 0.8333
+  min-width: 72rem; // 80rem × 0.8333
   height: 5.833rem; // 7rem × 0.8333
   margin-top: 1.667rem; // 2rem × 0.8333
   border-radius: 0.833rem; // 1rem × 0.8333
@@ -96,6 +96,7 @@
     padding: 0.417rem 1.25rem; // 0.5rem × 0.8333, 1.5rem × 0.8333
 
     color: var(--Secondary-colour);
+    transition: all 0.2s cubic-bezier(0.32, -0.01, 0.57, 0.95);
 
     &:hover {
       cursor: pointer;
