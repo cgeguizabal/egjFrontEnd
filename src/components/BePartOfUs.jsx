@@ -72,7 +72,7 @@ function BePartOfUs() {
         </button>
       </div>
       <div className={bePartOfUs.text_container}>
-        <h2 className={bePartOfUs.text_title}>BE PART OF THIS ADVENTURE</h2>
+        <h2 className={bePartOfUs.text_title}>JOIN US ON THIS ADVENTURE</h2>
         <div className={bePartOfUs.images_container}>
           {imagesCard.map((image, index) => (
             <figure className={bePartOfUs.images_wrapper}>
