@@ -1,9 +1,9 @@
-import Hero from "../components/Hero";
+import Hero from "../components/home/Hero";
 import home from "../styles/pages/home.module.scss";
 import Navbar from "../components/NavBar";
-import VideoSection from "../components/VideoSection";
-import TravelWithUsSection from "../components/TravelWithUsSection";
-import BePartOfUs from "../components/BePartOfUs";
+import VideoSection from "../components/home/VideoSection";
+import TravelWithUsSection from "../components/home/TravelWithUsSection";
+import BePartOfUs from "../components/home/BePartOfUs";
 
 function Home() {
   return (

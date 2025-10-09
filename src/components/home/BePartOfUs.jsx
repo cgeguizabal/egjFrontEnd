@@ -1,10 +1,11 @@
 import { useRef, useState } from "react";
-import bePartOfUs from "../styles/components/bePartOfUs.module.scss";
+import bePartOfUs from "../../styles/components/bePartOfUs.module.scss";
 import { IoMdVolumeOff, IoIosVolumeHigh } from "react-icons/io";
 import { MdHealthAndSafety } from "react-icons/md";
 import { FaSuitcase } from "react-icons/fa6";
 import { GiThreeLeaves } from "react-icons/gi";
-import { GiHealthNormal } from "react-icons/gi";
+
+import { motion } from "motion/react";
 
 function BePartOfUs() {
   const JourneyCards = [
@@ -49,7 +50,17 @@ function BePartOfUs() {
   const buttonIcon = isMuted ? <IoMdVolumeOff /> : <IoIosVolumeHigh />;
   return (
     <section className={bePartOfUs.bePartOfUs_section}>
-      <div className={bePartOfUs.video_container}>
+      <motion.div
+        initial={{ opacity: 0, x: -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, margin: "-2%" }}
+        transition={{
+          delay: 0.1,
+          x: { duration: 0.5, ease: "easeInOut" },
+          opacity: { duration: 1.2, ease: "easeOut" },
+        }}
+        className={bePartOfUs.video_container}
+      >
         <video
           className={bePartOfUs.video}
           autoPlay
@@ -70,8 +81,18 @@ function BePartOfUs() {
         >
           {buttonIcon}
         </button>
-      </div>
-      <div className={bePartOfUs.text_container}>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, x: 100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, margin: "-50%" }}
+        transition={{
+          delay: 0.1,
+          x: { duration: 0.5, ease: "easeInOut" },
+          opacity: { duration: 1.2, ease: "easeOut" },
+        }}
+        className={bePartOfUs.text_container}
+      >
         <h2 className={bePartOfUs.text_title}>JOIN US ON THIS ADVENTURE</h2>
         <div className={bePartOfUs.images_container}>
           {imagesCard.map((image, index) => (
@@ -84,18 +105,18 @@ function BePartOfUs() {
             </figure>
           ))}
         </div>
-
-        {/* <p className={bePartOfUs.text_paragraph}>
-            Welcome to the most fascinating expeditions adventure, touring the
-            beautiful city of Leticia, Amazonas Colombia and its surroundings; a
-            cultural connector that borders Colombia with Brazil and Peru, home
-            to the excellence of native indigenous communities, a nature with
-            varied fauna, flora, water sources, folklore, gastronomy and
-            traditions of three countries in the northernmost point of South
-            America.
-          </p> */}
-      </div>
-      <div className={bePartOfUs.carousel_container}>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-2%" }}
+        transition={{
+          delay: 0.1,
+          y: { duration: 0.5, ease: "easeInOut" },
+          opacity: { duration: 1.2, ease: "easeOut" },
+        }}
+        className={bePartOfUs.carousel_container}
+      >
         {JourneyCards.map((card, index) => (
           <div className={bePartOfUs.carousel_card_container} key={index}>
             <div className={bePartOfUs.carousel_card_wrapper}>
@@ -108,7 +129,7 @@ function BePartOfUs() {
             </div>
           </div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }

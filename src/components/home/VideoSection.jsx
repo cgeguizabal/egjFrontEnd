@@ -1,8 +1,19 @@
-import videoSection from "../styles/components/videoSection.module.scss";
+import videoSection from "../../styles/components/videoSection.module.scss";
+import { motion } from "motion/react";
 
 function VideoSection() {
   return (
-    <section className={videoSection.video_section}>
+    <motion.section
+      initial={{ opacity: 0, y: -100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50%" }}
+      transition={{
+        delay: 0.1,
+        y: { duration: 0.5, ease: "easeInOut" },
+        opacity: { duration: 1.2, ease: "easeOut" },
+      }}
+      className={videoSection.video_section}
+    >
       <div className={videoSection.video_container}>
         <video className={videoSection.video} autoPlay loop muted playsInline>
           <source
@@ -33,7 +44,7 @@ function VideoSection() {
           </p>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 

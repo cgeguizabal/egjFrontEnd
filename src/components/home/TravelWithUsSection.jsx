@@ -1,18 +1,19 @@
 import { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
+import { motion } from "motion/react";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import travel from "../styles/components/travelWithUs.module.scss";
-import card1 from "../assets/images/Card1.png";
-import card2 from "../assets/images/Card2.png";
-import card3 from "../assets/images/Card3.png";
-import card4 from "../assets/images/Card4.png";
-import card5 from "../assets/images/Card5.png";
-import card6 from "../assets/images/Card6.png";
+import travel from "../../styles/components/travelWithUs.module.scss";
+import card1 from "../../assets/images/Card1.png";
+import card2 from "../../assets/images/Card2.png";
+import card3 from "../../assets/images/Card3.png";
+import card4 from "../../assets/images/Card4.png";
+import card5 from "../../assets/images/Card5.png";
+import card6 from "../../assets/images/Card6.png";
 
 import { FaLanguage, FaPersonHiking } from "react-icons/fa6";
 import { MdNavigateNext, MdOutlineNavigateBefore } from "react-icons/md";
@@ -66,13 +67,33 @@ export default function TravelWithUsSection() {
   ];
 
   return (
-    <section className={travel.travel_container}>
+    <motion.section
+      initial={{ opacity: 0, y: -100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50%" }}
+      transition={{
+        delay: 0.1,
+        y: { duration: 0.5, ease: "easeInOut" },
+        opacity: { duration: 1.2, ease: "easeOut" },
+      }}
+      className={travel.travel_container}
+    >
       <div className={travel.travel_title}>
         <h1>WHY TRAVEL WITH US?</h1>
       </div>
       <hr className={travel.hr} />
 
-      <div className={travel.cards}>
+      <motion.div
+        initial={{ opacity: 0, y: -100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50%" }}
+        transition={{
+          delay: 0.1,
+          y: { duration: 0.8, ease: "easeInOut" },
+          opacity: { duration: 1.2, ease: "easeOut" },
+        }}
+        className={travel.cards}
+      >
         <Swiper
           style={{ height: "31.5rem" }}
           modules={[Navigation]}
@@ -131,11 +152,11 @@ export default function TravelWithUsSection() {
           <MdNavigateNext />
         </div>
         <div ref={paginationRef} className="swiper-pagination"></div>
-      </div>
+      </motion.div>
 
       <div className={travel.button_container}>
         <button className={travel.button}>SEE TOURS</button>
       </div>
-    </section>
+    </motion.section>
   );
 }
