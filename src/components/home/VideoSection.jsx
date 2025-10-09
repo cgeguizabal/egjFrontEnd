@@ -6,7 +6,7 @@ function VideoSection() {
     <motion.section
       initial={{ opacity: 0, y: -100 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50%" }}
+      viewport={{ once: false, margin: "-50%" }}
       transition={{
         delay: 0.1,
         y: { duration: 0.5, ease: "easeInOut" },

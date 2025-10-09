@@ -53,7 +53,7 @@ function BePartOfUs() {
       <motion.div
         initial={{ opacity: 0, x: -100 }}
         whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true, margin: "-2%" }}
+        viewport={{ once: false, margin: "-2%" }}
         transition={{
           delay: 0.1,
           x: { duration: 0.5, ease: "easeInOut" },
@@ -85,7 +85,7 @@ function BePartOfUs() {
       <motion.div
         initial={{ opacity: 0, x: 100 }}
         whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true, margin: "-50%" }}
+        viewport={{ once: false, margin: "-2%" }}
         transition={{
           delay: 0.1,
           x: { duration: 0.5, ease: "easeInOut" },
@@ -109,7 +109,7 @@ function BePartOfUs() {
       <motion.div
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-2%" }}
+        viewport={{ once: false, margin: "-2%" }}
         transition={{
           delay: 0.1,
           y: { duration: 0.5, ease: "easeInOut" },
