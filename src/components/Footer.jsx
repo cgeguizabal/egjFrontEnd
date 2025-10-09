@@ -11,6 +11,25 @@ import { MdEmail } from "react-icons/md";
 import { IoLogoWhatsapp } from "react-icons/io";
 
 function Footer() {
+  const socialLinks = {
+    facebook: "https://www.facebook.com/expeditionsgeorgeofthejungle",
+    tripAdvisor:
+      "https://www.tripadvisor.com/Attraction_Review-g317037-d12250134-Reviews-Expeditions_George_of_the_Jungle-Leticia_Amazonas_Department.html",
+    instagram: "https://www.instagram.com/expeditionsgeorgeofthejungle/",
+    linkedin:
+      "https://www.linkedin.com/company/expeditions-george-of-the-jungle-official/",
+    youtube: "https://www.youtube.com/@expeditionsgeorgeofthejungle",
+    whatsapp: "https://wa.me/573175299539",
+    email: "expeditionsgeorgeofthejungle@gmail.com",
+  };
+
+  const handleEmailClick = (e) => {
+    e.preventDefault();
+    window.open(
+      `https://mail.google.com/mail/?view=cm&fs=1&to=${socialLinks.email}`,
+      "_blank"
+    );
+  };
   return (
     <footer className={footer.footer_container}>
       <div className={footer.footer_content_top}>
@@ -35,16 +54,31 @@ function Footer() {
           </div>
         </div>
         <hr className={footer.separator} />
+        {/* Social Media */}
         <div>
           <h4 className={footer.quick_links_title}>Follow Us</h4>
           <div className={footer.social_media_icons_container}>
             <div className={footer.social_media_icons}>
               <ul>
                 <li>
-                  <FaTripadvisor />
+                  <a
+                    href={socialLinks.tripAdvisor}
+                    target="_blank"
+                    aria-label="TripAdvisor"
+                    rel="noopener noreferrer"
+                  >
+                    <FaTripadvisor />
+                  </a>
                 </li>
                 <li>
-                  <FaLinkedin />
+                  <a
+                    href={socialLinks.linkedin}
+                    target="_blank"
+                    aria-label="LinkedIn"
+                    rel="noopener noreferrer"
+                  >
+                    <FaLinkedin />
+                  </a>
                 </li>
               </ul>
             </div>
@@ -52,32 +86,70 @@ function Footer() {
             <div className={footer.social_media_icons}>
               <ul>
                 <li>
-                  <FaSquareFacebook />
+                  <a
+                    href={socialLinks.facebook}
+                    target="_blank"
+                    aria-label="Facebook"
+                    rel="noopener noreferrer"
+                  >
+                    <FaSquareFacebook />
+                  </a>
                 </li>
                 <li>
-                  <FaSquareYoutube />
+                  <a
+                    href={socialLinks.youtube}
+                    target="_blank"
+                    aria-label="Youtube"
+                    rel="noopener noreferrer"
+                  >
+                    <FaSquareYoutube />
+                  </a>
                 </li>
               </ul>
             </div>
             <div className={footer.social_media_icons}>
               <ul>
                 <li>
-                  <FaSquareInstagram />
+                  <a
+                    href={socialLinks.instagram}
+                    target="_blank"
+                    aria-label="Instagram"
+                    rel="noopener noreferrer"
+                  >
+                    <FaSquareInstagram />
+                  </a>
                 </li>
               </ul>
             </div>
           </div>
         </div>
         <hr className={footer.separator} />
+        {/* Contact US */}
         <div>
           <h4 className={footer.quick_links_title}>Contact Us</h4>
           <div className={footer.contact_us}>
             <ul>
-              <li className={footer.contact_us_item}>
-                <MdEmail /> expeditionsgeorgeofthejungle@gmail.com
+              <li>
+                <a
+                  className={footer.contact_us_item}
+                  href="#"
+                  onClick={handleEmailClick}
+                  aria-label="Email"
+                  rel="noopener noreferrer"
+                >
+                  <MdEmail /> expeditionsgeorgeofthejungle@gmail.com
+                </a>
               </li>
-              <li className={footer.contact_us_item}>
-                <IoLogoWhatsapp />+ 57 (317) 529-9539{" "}
+              <li>
+                <a
+                  className={footer.contact_us_item}
+                  href={socialLinks.whatsapp}
+                  target="_blank"
+                  aria-label="Whatsapp"
+                  rel="noopener noreferrer"
+                >
+                  <IoLogoWhatsapp />+ 57 (317) 529-9539{" "}
+                </a>
               </li>
             </ul>
           </div>
