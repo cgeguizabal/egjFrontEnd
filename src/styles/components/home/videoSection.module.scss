@@ -1,4 +1,4 @@
-@use "../variables.scss" as *;
+@use "../../variables.scss" as *;
 
 .video_section {
   display: flex;
@@ -11,6 +11,12 @@
 
   grid-row: 8 / 12;
   grid-column: 2 / -2;
+
+  @media (max-width: $screen-medium) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .video {
@@ -40,6 +46,11 @@
 
     @media (max-width: $screen-medium-large) {
       height: 29rem;
+    }
+
+    @media (max-width: $screen-medium) {
+      width: 90%;
+      height: auto;
     }
   }
 

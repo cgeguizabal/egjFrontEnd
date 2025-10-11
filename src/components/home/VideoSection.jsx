@@ -1,4 +1,4 @@
-import videoSection from "../../styles/components/videoSection.module.scss";
+import videoSection from "../../styles/components/home/videoSection.module.scss";
 import { motion } from "motion/react";
 
 function VideoSection() {

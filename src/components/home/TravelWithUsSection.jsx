@@ -7,7 +7,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import travel from "../../styles/components/travelWithUs.module.scss";
+import travel from "../../styles/components/home/travelWithUs.module.scss";
 import card1 from "../../assets/images/Card1.png";
 import card2 from "../../assets/images/Card2.png";
 import card3 from "../../assets/images/Card3.png";

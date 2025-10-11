@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import bePartOfUs from "../../styles/components/bePartOfUs.module.scss";
+import bePartOfUs from "../../styles/components/home/bePartOfUs.module.scss";
 import { IoMdVolumeOff, IoIosVolumeHigh } from "react-icons/io";
 import { MdHealthAndSafety } from "react-icons/md";
 import { FaSuitcase } from "react-icons/fa6";

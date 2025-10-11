@@ -1,4 +1,4 @@
-import heroSection from "../../styles/components/heroSection.module.scss";
+import heroSection from "../../styles/components/home/heroSection.module.scss";
 import { motion } from "motion/react";
 
 const Hero = () => {

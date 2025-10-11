@@ -18,6 +18,14 @@ html {
   font-size: 85%; /* 16px × 0.85 = 13.6px */ // So Clerk's UI isn't affected much
 
   min-height: 100vh;
+
+  @media (max-width: $screen-medium) {
+    font-size: 80%; /* 16px × 0.75 = 12px */
+  }
+
+  @media (max-width: $screen-small) {
+    font-size: 70%; /* 16px × 0.75 = 12px */
+  }
 }
 
 body {
@@ -38,6 +46,20 @@ body {
     [full-start]minmax(6rem, 1fr)
     [center-start] repeat(8, [col-start] minmax(8rem, 12rem) [col-end])
     [center-end] minmax(6rem, 1fr) [full-end];
+
+  @media (max-width: $screen-medium-large) {
+    grid-template-columns:
+      [full-start] minmax(4rem, 1fr)
+      [center-start] repeat(4, [col-start] minmax(3rem, 10rem) [col-end])
+      [center-end] minmax(4rem, 1fr) [full-end];
+  }
+
+  @media (max-width: $screen-small) {
+    grid-template-columns:
+      [full-start] minmax(2rem, 1fr)
+      [center-start] minmax(3rem, 10rem)
+      [center-end] minmax(2rem, 1fr) [full-end];
+  }
 
   grid-template-rows:
     [full-start] minmax(6rem, 1fr)
