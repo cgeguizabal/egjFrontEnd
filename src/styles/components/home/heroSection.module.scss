@@ -20,6 +20,9 @@
   @media (max-width: $screen-medium-large) {
     text-align: center;
   }
+  @media (max-width: $screen-small-375) {
+    font-size: 3rem;
+  }
 }
 
 .highlight {
@@ -46,6 +49,13 @@
 
   text-align: center;
   max-width: 600px;
+  @media (max-width: $screen-small) {
+    font-size: 1.6rem;
+  }
+
+  @media (max-width: $screen-small-414) {
+    font-size: 1.8rem;
+  }
 }
 
 .hr {
@@ -54,6 +64,9 @@
   background: linear-gradient(to right, transparent, white, transparent);
   width: 50%; /* or 100% */
   margin: 1rem auto; /* center it */
+  @media (max-width: $screen-small) {
+    width: 75%;
+  }
 }
 
 .button {

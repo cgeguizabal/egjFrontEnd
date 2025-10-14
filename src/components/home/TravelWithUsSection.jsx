@@ -106,6 +106,7 @@ export default function TravelWithUsSection() {
             1000: { slidesPerView: 2 },
             768: { slidesPerView: 2 },
             480: { slidesPerView: 1 },
+            360: { slidesPerView: 1 },
           }}
           navigation={{
             prevEl: prevRef.current,

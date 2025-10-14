@@ -52,6 +52,11 @@
       width: 90%;
       height: auto;
     }
+
+    @media (max-width: $screen-small) {
+      width: 100%;
+      height: auto;
+    }
   }
 
   &_titles {
@@ -64,6 +69,10 @@
 
     & h3 {
       color: var(--Tertiary-colour);
+    }
+    @media (max-width: $screen-small-375) {
+      font-size: 2.2rem;
+      line-height: 2.5rem;
     }
   }
 

@@ -130,6 +130,7 @@
   }
 }
 
+// MOBILE NAVBAR
 .navbar {
   &_mobile {
     display: none;
@@ -143,7 +144,7 @@
       position: fixed;
       top: 0;
       left: 0;
-      width: 100%;
+      width: 100vw;
       height: 6.833rem; // 7rem × 0.8333
       background: rgba(20, 20, 20, 0.05);
       background: linear-gradient(
@@ -216,12 +217,24 @@
     &_icon {
       color: var(--Secondary-colour);
       font-size: 3rem;
+      &:hover {
+        cursor: pointer;
+        color: var(--Primary-colour);
+      }
+      @media (max-width: $screen-small) {
+        font-size: 3.5rem;
+      }
     }
 
     &_close {
       &_icon {
         color: var(--Secondary-colour);
         font-size: 3rem;
+
+        &:hover {
+          cursor: pointer;
+          color: var(--Primary-colour);
+        }
       }
     }
 

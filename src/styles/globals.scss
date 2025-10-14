@@ -55,9 +55,10 @@ body {
   }
 
   @media (max-width: $screen-small) {
+    gap: 1rem;
     grid-template-columns:
       [full-start] minmax(2rem, 1fr)
-      [center-start] minmax(3rem, 10rem)
+      [center-start] minmax(5rem, 38rem)
       [center-end] minmax(2rem, 1fr) [full-end];
   }
 
