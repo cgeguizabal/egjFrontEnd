@@ -47,7 +47,7 @@ body {
     [center-start] repeat(8, [col-start] minmax(8rem, 12rem) [col-end])
     [center-end] minmax(6rem, 1fr) [full-end];
 
-  @media (max-width: $screen-medium-large) {
+  @media (max-width: $screen-medium) {
     grid-template-columns:
       [full-start] minmax(4rem, 1fr)
       [center-start] repeat(4, [col-start] minmax(3rem, 10rem) [col-end])

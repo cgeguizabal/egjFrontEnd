@@ -95,8 +95,11 @@ const Navbar = () => {
               exit={{
                 opacity: 0,
                 x: 200,
-                transition: { duration: 0.3, ease: "easeOut" },
-                opacity: { duration: 1, ease: "easeOut" },
+                transition: {
+                  duration: 0.3,
+                  ease: "easeOut",
+                  opacity: { duration: 1, ease: "easeOut" },
+                },
               }}
               transition={{
                 delay: 0.1,
