@@ -3,9 +3,10 @@ import "./App.css";
 import Home from "./pages/Home";
 import { useSession, useUser } from "@clerk/clerk-react";
 import { useEffect, useState } from "react";
-import { getUser } from "./assets/API/Services/UserServices";
+import { getUser } from "./assets/API/Services/UserService";
 import useAuthStore from "./store/auth";
 import Footer from "./components/Footer";
+import TourExpeditioins from "./pages/TourExpeditioins";
 // import Navbar from "./components/NavBar";
 function App() {
   const [token, setToken] = useState(null);
@@ -49,12 +50,13 @@ function App() {
   return (
     <>
       {/* <Navbar /> */}
-      <div className="min-h-[70vh]">
+      <main className="min-h-[70vh]">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/tour" element={<TourExpeditioins />} />
         </Routes>
         <Footer />
-      </div>
+      </main>
     </>
   );
 }

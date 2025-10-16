@@ -96,7 +96,7 @@ function BePartOfUs() {
         <h2 className={bePartOfUs.text_title}>JOIN US ON THIS ADVENTURE</h2>
         <div className={bePartOfUs.images_container}>
           {imagesCard.map((image, index) => (
-            <figure className={bePartOfUs.images_wrapper}>
+            <figure className={bePartOfUs.images_wrapper} key={index}>
               <img
                 src={image}
                 alt={`Image${index}`}

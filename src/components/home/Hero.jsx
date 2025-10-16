@@ -40,7 +40,7 @@ const Hero = () => {
       >
         Reconnect with nature on our Amazon Rainforest tours with
         <span className={heroSection.highlight_2}>
-          English-speaking guides.
+          <b>English-speaking guides.</b>
         </span>
       </motion.h4>
       <motion.hr

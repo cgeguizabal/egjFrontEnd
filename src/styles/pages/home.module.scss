@@ -1,3 +1,4 @@
+@use "../variables.scss" as *;
 .home {
   &_container {
     background-image: url("../../assets/images/Background-Desktop.png");
@@ -21,7 +22,7 @@
     }
   }
 
-  @media (min-width: 1920px) {
+  @media (min-width: $screen-xl) {
     &_container {
       background-image: url("../../assets/images/Background-LargeScreen-1920.png");
     }

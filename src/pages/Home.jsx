@@ -8,13 +8,13 @@ import BePartOfUs from "../components/home/BePartOfUs";
 function Home() {
   return (
     <>
-      <main className={`${home.home_container} grid-container`}>
+      <div className={`${home.home_container} grid-container`}>
         <Navbar className={`${home.navbar}`} />
         <Hero />
         <VideoSection />
         <TravelWithUsSection />
         <BePartOfUs />
-      </main>
+      </div>
     </>
   );
 }

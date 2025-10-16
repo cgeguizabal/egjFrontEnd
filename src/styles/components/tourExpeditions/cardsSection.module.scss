@@ -1,0 +1,53 @@
+@use "../../variables.scss" as *;
+.cards {
+  &_section {
+    &_container {
+      grid-column: 2 / -2;
+      grid-row: 7 / 13;
+
+      display: grid;
+      grid-template-columns: repeat(4, minmax(10rem, 1fr));
+      gap: 2rem;
+
+      @media (max-width: $screen-medium-large) {
+        grid-template-columns: repeat(2, minmax(20rem, 1fr));
+        gap: 1.5rem;
+      }
+
+      @media (max-width: $screen-small) {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+    }
+
+    &_title {
+      grid-column: 2 / -2;
+      background: linear-gradient(to top, #1e9146, #79a81c, #7ea15b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text; /* for Firefox */
+      color: transparent;
+      text-shadow: 0 12px 40px 5px rgba(0, 0, 0, 0.25);
+      font-family: chivo, sans-serif;
+      display: flex;
+      justify-content: center;
+      margin-top: 0rem;
+      font-size: 2.5rem;
+      font-weight: 600;
+      letter-spacing: 0.5rem;
+
+      @media (max-width: $screen-small) {
+        font-size: 2.3rem;
+        letter-spacing: 0.3rem;
+      }
+      @media (max-width: $screen-small-414) {
+        font-size: 2.1rem;
+        letter-spacing: 0.2rem;
+      }
+      @media (max-width: $screen-small-375) {
+        font-size: 2rem;
+        letter-spacing: 0.1rem;
+      }
+    }
+  }
+}
