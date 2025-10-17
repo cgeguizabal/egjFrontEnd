@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 
 function Hero() {
   return (
-    <motion.div
+    <motion.section
       initial={{ opacity: 0, y: 100 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: false, margin: "-2%" }}
@@ -45,7 +45,7 @@ function Hero() {
         </span>{" "}
         meet in culture, flavor, and biodiversity.{" "}
       </motion.p>
-    </motion.div>
+    </motion.section>
   );
 }
 
