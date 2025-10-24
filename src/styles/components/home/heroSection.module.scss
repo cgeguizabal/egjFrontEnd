@@ -79,7 +79,7 @@
   margin-top: 1rem;
   font-weight: 500;
 
-  transition: all 0.2s ease-in-out;
+  transition: $transition-duration;
 
   &:hover {
     cursor: pointer;

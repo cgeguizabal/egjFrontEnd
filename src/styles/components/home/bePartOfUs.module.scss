@@ -152,7 +152,7 @@
   &_wrapper {
     width: 16rem;
     height: 11rem;
-    transition: all 0.2s ease-in-out;
+    transition: $transition-duration;
 
     &:hover {
       cursor: pointer;
@@ -227,7 +227,7 @@
         z-index: -1;
       }
 
-      transition: all 0.2s ease-in-out;
+      transition: $transition-duration;
 
       &:hover {
         cursor: pointer;
