@@ -4,6 +4,7 @@ import Navbar from "../components/NavBar";
 import tour from "../styles/pages/tourExpeditions.module.scss";
 import Hero from "../components/tourExpeditions/Hero";
 import CardsSection from "../components/tourExpeditions/CardsSection";
+import Faq from "../components/tourExpeditions/Faq";
 
 function TourExpeditioins() {
   const [tours, setTours] = useState([]);
@@ -22,6 +23,7 @@ function TourExpeditioins() {
         <Navbar />
         <Hero />
         <CardsSection />
+        <Faq />
       </div>
     </>
   );

@@ -1,16 +1,31 @@
 import Cards from "../../styles/components/tourExpeditions/cardsSection.module.scss";
 import { getTours } from "../../assets/API/Services/ToursService";
 import { motion } from "motion/react";
+import { useEffect, useState } from "react";
 
 function CardsSection() {
+  const [tours, setTours] = useState([]);
+
+  useEffect(() => {
+    const fetchTours = async () => {
+      try {
+        const data = await getTours();
+        console.log("Fetched Tours:", tours);
+        setTours(data);
+      } catch (error) {
+        console.error("Error fetching tours:", error);
+      }
+    };
+    fetchTours();
+  }, []);
   return (
     <section className={Cards.cards_section_container}>
       <motion.header
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false, margin: "-20%" }}
+        viewport={{ once: false, margin: "-15%" }}
         transition={{
-          delay: 0.1,
+          delay: 0,
           y: { duration: 0.5, ease: "easeInOut" },
           opacity: { duration: 1.2, ease: "easeOut" },
         }}
@@ -26,23 +41,25 @@ function CardsSection() {
       </motion.header>
 
       <div className={Cards.cards_container}>
-        <div className={Cards.card_individual_container}>
-          <figure className={Cards.card_image_container}>
-            <img
-              src="https://res.cloudinary.com/dbuxt1ti8/image/upload/v1755138303/tours/irvfiutfwc1vbfnhu0sk.jpg"
-              alt="Tour Image"
-              className={Cards.card_image}
-            />
-          </figure>
-          <div className={Cards.card_text_container}>
-            <h2 className={Cards.card_title}>Tour Title</h2>
-            <p className={Cards.card_description}>
-              Enjoy a full-day Amazon adventure: cruise the river, trek the
-              jungle, see wildlife, savor local lunch, and spot pink dolphins.
-            </p>
-            <button className={Cards.card_button}>View Details</button>
+        {tours.map((tour, index) => (
+          <div className={Cards.card_individual_container} key={tours._id}>
+            <figure className={Cards.card_image_container}>
+              <img
+                src={
+                  tour.images?.[0]?.url ||
+                  "https://res.cloudinary.com/default-placeholder.jpg"
+                }
+                alt={tour.name || "Tour Image"}
+                className={Cards.card_image}
+              />
+            </figure>
+            <div className={Cards.card_text_container}>
+              <h2 className={Cards.card_title}>{tour.name}</h2>
+              <p className={Cards.card_description}>{tour.description}</p>
+              <button className={Cards.card_button}>View Details</button>
+            </div>
           </div>
-        </div>
+        ))}
       </div>
     </section>
   );
