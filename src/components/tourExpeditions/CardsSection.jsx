@@ -42,7 +42,18 @@ function CardsSection() {
 
       <div className={Cards.cards_container}>
         {tours.map((tour, index) => (
-          <div className={Cards.card_individual_container} key={tours._id}>
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, margin: "-3%" }}
+            transition={{
+              delay: 0,
+              y: { duration: 0.5, ease: "easeInOut" },
+              opacity: { duration: 1.2, ease: "easeOut" },
+            }}
+            className={Cards.card_individual_container}
+            key={tours._id}
+          >
             <figure className={Cards.card_image_container}>
               <img
                 src={
@@ -58,7 +69,7 @@ function CardsSection() {
               <p className={Cards.card_description}>{tour.description}</p>
               <button className={Cards.card_button}>View Details</button>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
