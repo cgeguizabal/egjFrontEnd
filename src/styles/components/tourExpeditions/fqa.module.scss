@@ -1,5 +1,73 @@
+@use "../../variables.scss" as *;
+
 .container {
-  grid-column: 2 / -2;
-  grid-row: 14 / 18;
-  color: white;
+  grid-column: 3 / -3;
+  grid-row: 14 / 19;
+  margin-top: 2rem;
+  padding: 2rem;
+
+  background: radial-gradient(
+    ellipse at center,
+    rgb(0, 0, 0, 1),
+    transparent 70%
+  );
+}
+
+.text {
+  &_title {
+    // color: var(--Secondary-colour);
+    background: linear-gradient(to top, #b38705, #f0c02d, #f7e27a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text; /* for Firefox */
+    color: transparent;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  &_description {
+    margin-top: 0.3rem;
+    font-size: 1.7rem;
+    color: var(--Secondary-colour);
+    text-align: center;
+  }
+}
+.question {
+  &_container {
+    //Glassmorphism effect
+    background: rgba(20, 20, 20, 0.05);
+    background: linear-gradient(
+      135deg,
+      rgba(20, 20, 20, 0.05) 0%,
+      rgba(255, 255, 255, 0.05) 100%
+    );
+    backdrop-filter: blur(2px);
+
+    box-shadow: 8px 8px 15px 0 rgba(0, 0, 0, 0.4),
+      inset 0 0 5px 3px rgba(255, 255, 255, 0.1);
+    margin-top: 4rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    position: relative;
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0 12px 40px 5px rgba(0, 0, 0, 0.3),
+        inset 0 0 10px 5px rgba(255, 255, 255, 0.2);
+    }
+  }
+
+  color: var(--Secondary-colour);
+}
+
+.hr {
+  border: none;
+  height: 5px; /* thickness of the line */
+  background: linear-gradient(to right, transparent, white, transparent);
+  width: 70%; /* or 100% */
+  margin: 1.5rem auto; /* center it */
+  @media (max-width: $screen-small) {
+    width: 75%;
+  }
 }
