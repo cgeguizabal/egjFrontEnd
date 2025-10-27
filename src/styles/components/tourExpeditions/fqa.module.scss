@@ -2,15 +2,17 @@
 
 .container {
   grid-column: 3 / -3;
-  grid-row: 14 / 19;
+  grid-row: 14 / 21;
   margin-top: 2rem;
-  padding: 2rem;
 
-  background: radial-gradient(
-    ellipse at center,
-    rgb(0, 0, 0, 1),
-    transparent 70%
-  );
+  background: radial-gradient(ellipse at center, rgb(0, 0, 0, 1), transparent);
+  // background: linear-gradient(
+  //   to bottom,
+  //   transparent,
+  //   rgb(0, 0, 0, 0.5),
+  //   rgb(0, 0, 0, 0.8),
+  //   transparent
+  // );
 }
 
 .text {
@@ -58,7 +60,7 @@
       margin-top: 4rem; // only the first question
     }
 
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     &:hover {
       cursor: pointer;
       box-shadow: 0 12px 40px 5px rgba(0, 0, 0, 0.3),
@@ -79,15 +81,31 @@
   }
 
   &_open {
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
 
   &_hr {
     height: 1px;
     border: none;
     background-color: var(--Secondary-colour);
-    width: 90%;
+    width: 95%;
     margin: 0 auto;
+    margin-bottom: 1rem;
+  }
+
+  &_arrow {
+    background: linear-gradient(to top, #1e9146, #79a81c, #7ea15b);
+    border-radius: 50%;
+    padding: 0.2rem;
+  }
+
+  &_text {
+    background: radial-gradient(
+      ellipse at center,
+      rgb(0, 0, 0, 0.5),
+      transparent
+    );
+    padding: 0.3rem;
   }
 }
 
@@ -95,8 +113,8 @@
   border: none;
   height: 5px; /* thickness of the line */
   background: linear-gradient(to right, transparent, white, transparent);
-  width: 70%; /* or 100% */
-  margin: 1.5rem auto; /* center it */
+  width: 75%; /* or 100% */
+  margin: 1.3rem auto 0 auto; /* center it */
   @media (max-width: $screen-small) {
     width: 75%;
   }

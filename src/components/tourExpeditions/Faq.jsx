@@ -1,6 +1,6 @@
 import { useState } from "react";
 import FaqStyle from "../../styles/components/tourExpeditions/fqa.module.scss";
-import { IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 function Faq() {
   const questions = [
@@ -22,17 +22,22 @@ function Faq() {
     {
       question: "What should I pack for the tour?",
       answer:
-        "No, all remaining balances must be paid in cash in Colombian Pesos (COP) at our office. Make sure to exchange currency before arriving in Leticia, as card services are limited in the Amazon.",
+        "Bring lightweight long-sleeve shirts and pants, a swimsuit, a quick-dry towel, insect repellent, sunscreen, a flashlight or headlamp, any personal medication, comfortable hiking shoes or sneakers, and a small backpack for daily excursions. And don’t worry — we provide rubber boots!",
     },
     {
-      question: "Can I pay in US dollars or with a card at the agency?",
+      question: "Is the Ayahuasca experience included in all packages?",
       answer:
-        "No, all remaining balances must be paid in cash in Colombian Pesos (COP) at our office. Make sure to exchange currency before arriving in Leticia, as card services are limited in the Amazon.",
+        "No, Ayahuasca ceremonies are not included in all tours. They are available as an optional add-on in select standard packages. Please request in advance if interested.",
     },
     {
-      question: "Can I pay in US dollars or with a card at the agency?",
+      question: "Will all activities listed be available during my trip?",
       answer:
-        "No, all remaining balances must be paid in cash in Colombian Pesos (COP) at our office. Make sure to exchange currency before arriving in Leticia, as card services are limited in the Amazon.",
+        "Activities may vary slightly depending on weather or seasonal changes, but we always ensure a rich and fulfilling Amazon experience.",
+    },
+    {
+      question: "Is lodging accommodation included in the package?",
+      answer:
+        "Yes. Every package includes accommodation in rustic, clean, and comfortable jungle lodges during your entire tour.",
     },
   ];
   const [openIndex, setOpenIndex] = useState(null);
@@ -62,15 +67,17 @@ function Faq() {
                 onClick={() => toggle(index)}
               >
                 <h3 className={FaqStyle.question_title}>{item.question}</h3>
-                <IoIosArrowDown
-                  className={openIndex === index ? FaqStyle.rotate : ""}
-                />
+                {openIndex === index ? (
+                  <IoIosArrowUp className={FaqStyle.question_arrow} />
+                ) : (
+                  <IoIosArrowDown className={FaqStyle.question_arrow} />
+                )}
               </div>
 
               {openIndex === index && (
                 <div className={FaqStyle.question_open}>
                   <hr className={FaqStyle.question_hr} />
-                  <p>{item.answer}</p>
+                  <p className={FaqStyle.question_text}>{item.answer}</p>
                 </div>
               )}
             </div>
