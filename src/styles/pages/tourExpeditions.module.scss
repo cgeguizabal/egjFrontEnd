@@ -1,3 +1,4 @@
+@use "../variables.scss" as *;
 .tours {
   &_container {
     background-image: url("../../assets/images/TourExpaditions-Background.png");
@@ -22,6 +23,10 @@
 
     @media (min-width: 1920px) {
       background-image: url("../../assets/images/TourExpaditions-Background-LargeScreen-1920.png");
+    }
+
+    @media (max-width: $screen-medium) {
+      background-image: url("../../assets/images/TourExpeditions-Background-Medium.png");
     }
   }
 }

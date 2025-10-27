@@ -13,6 +13,10 @@
   //   rgb(0, 0, 0, 0.8),
   //   transparent
   // );
+
+  @media (max-width: $screen-medium) {
+    grid-column: 2 / -2;
+  }
 }
 
 .text {
@@ -27,12 +31,18 @@
     font-weight: 700;
     text-transform: uppercase;
     text-align: center;
+    @media (max-width: $screen-medium) {
+      font-size: 2.2rem;
+    }
   }
   &_description {
     margin-top: 0.3rem;
     font-size: 1.7rem;
     color: var(--Secondary-colour);
     text-align: center;
+    @media (max-width: $screen-medium) {
+      font-size: 1.5rem;
+    }
   }
 }
 
