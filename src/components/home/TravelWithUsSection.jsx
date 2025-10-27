@@ -78,12 +78,12 @@ export default function TravelWithUsSection() {
       }}
       className={travel.travel_container}
     >
-      <div className={travel.travel_title}>
+      <header className={travel.travel_title}>
         <h1>WHY TRAVEL WITH US?</h1>
-      </div>
+      </header>
       <hr className={travel.hr} />
 
-      <motion.div
+      <motion.article
         initial={{ opacity: 0, y: -100 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false, margin: "-50%" }}
@@ -153,7 +153,7 @@ export default function TravelWithUsSection() {
           <MdNavigateNext />
         </div>
         <div ref={paginationRef} className="swiper-pagination"></div>
-      </motion.div>
+      </motion.article>
 
       <div className={travel.button_container}>
         <button className={travel.button}>SEE TOURS</button>

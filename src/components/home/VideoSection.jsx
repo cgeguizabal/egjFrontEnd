@@ -14,15 +14,15 @@ function VideoSection() {
       }}
       className={videoSection.video_section}
     >
-      <div className={videoSection.video_container}>
+      <figure className={videoSection.video_container}>
         <video className={videoSection.video} autoPlay loop muted playsInline>
           <source
             src="https://res.cloudinary.com/dbuxt1ti8/video/upload/v1759272080/React_lp5cj4.mp4"
             type="video/mp4"
           />
         </video>
-      </div>
-      <div className={videoSection.textBox_container}>
+      </figure>
+      <article className={videoSection.textBox_container}>
         <div className={videoSection.textBox_titles}>
           <h2>Discover the Amazon</h2>
           <h3>Live the adventure</h3>
@@ -43,7 +43,7 @@ function VideoSection() {
             by the sounds of the forest.
           </p>
         </div>
-      </div>
+      </article>
     </motion.section>
   );
 }

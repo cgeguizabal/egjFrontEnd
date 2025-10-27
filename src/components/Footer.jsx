@@ -125,7 +125,7 @@ function Footer() {
         </div>
         <hr className={footer.separator} />
         {/* Contact US */}
-        <div>
+        <address>
           <h4 className={footer.quick_links_title}>Contact Us</h4>
           <div className={footer.contact_us}>
             <ul>
@@ -159,7 +159,7 @@ function Footer() {
               <li>Phone (Colombia): +57-320-899-6144 & + 57 (317) 529-9539 </li>
               <li>Phone (USA): +1 (680) 214-5633</li>
             </ul> */}
-        </div>
+        </address>
       </div>
       <hr className={footer.separator_full} />
       <div className={footer.copyright_container}>

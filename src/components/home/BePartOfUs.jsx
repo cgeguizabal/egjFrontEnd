@@ -50,7 +50,7 @@ function BePartOfUs() {
   const buttonIcon = isMuted ? <IoMdVolumeOff /> : <IoIosVolumeHigh />;
   return (
     <section className={bePartOfUs.bePartOfUs_section}>
-      <motion.div
+      <motion.figure
         initial={{ opacity: 0, x: -100 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: false, margin: "-2%" }}
@@ -81,8 +81,8 @@ function BePartOfUs() {
         >
           {buttonIcon}
         </button>
-      </motion.div>
-      <motion.div
+      </motion.figure>
+      <motion.article
         initial={{ opacity: 0, x: 100 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: false, margin: "-2%" }}
@@ -105,7 +105,7 @@ function BePartOfUs() {
             </figure>
           ))}
         </div>
-      </motion.div>
+      </motion.article>
       <motion.div
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}

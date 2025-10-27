@@ -47,8 +47,8 @@ function Faq() {
   };
 
   return (
-    <div className={FaqStyle.container}>
-      <div className={FaqStyle.text_container}>
+    <section className={FaqStyle.container}>
+      <header className={FaqStyle.text_container}>
         <h1 className={FaqStyle.text_title}>
           Expeditions George of the Jungle – FAQ
         </h1>
@@ -57,8 +57,8 @@ function Faq() {
           Amazon? Secure your spot with a 30% deposit today!
         </p>
         <hr className={FaqStyle.hr} />
-      </div>
-      <div>
+      </header>
+      <article>
         {questions.map((item, index) => (
           <div className={FaqStyle.question_container} key={index}>
             <div className={FaqStyle.question}>
@@ -83,8 +83,8 @@ function Faq() {
             </div>
           </div>
         ))}
-      </div>
-    </div>
+      </article>
+    </section>
   );
 }
 

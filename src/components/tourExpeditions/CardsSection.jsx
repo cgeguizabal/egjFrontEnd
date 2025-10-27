@@ -40,7 +40,7 @@ function CardsSection() {
         </p>
       </motion.header>
 
-      <div className={Cards.cards_container}>
+      <article className={Cards.cards_container}>
         {tours.map((tour, index) => (
           <motion.div
             initial={{ opacity: 0, y: 100 }}
@@ -71,7 +71,7 @@ function CardsSection() {
             </div>
           </motion.div>
         ))}
-      </div>
+      </article>
     </section>
   );
 }
