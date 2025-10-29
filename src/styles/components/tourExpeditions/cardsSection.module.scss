@@ -5,26 +5,30 @@
       grid-column: 2 / -2;
       grid-row: 7 / 14;
       padding-top: 1rem;
-
-      display: grid;
-      grid-template-columns: repeat(4, minmax(10rem, 1fr));
-      grid-template-rows: repeat(8, minmax(5rem, 1fr));
-      gap: 2rem;
+      z-index: 500;
 
       @media (max-width: $screen-medium-large) {
         grid-template-columns: repeat(2, minmax(20rem, 1fr));
         gap: 1.5rem;
       }
 
+      @media (max-width: $screen-medium) {
+        grid-row: 6 / 14;
+      }
+
       @media (max-width: $screen-small) {
         grid-template-columns: 1fr;
         gap: 1rem;
+        grid-row: 5 / 14;
       }
     }
 
     &_text_container {
       grid-column: 1 / -1;
       grid-row: 1 / 2;
+      @media (max-width: $screen-small) {
+        grid-row: 1;
+      }
     }
 
     &_title {
@@ -54,6 +58,11 @@
         font-size: 2rem;
         letter-spacing: 0.1rem;
       }
+
+      @media (max-width: $screen-small) {
+        text-align: center;
+        font-size: 1.9rem;
+      }
     }
 
     &_description {
@@ -81,6 +90,10 @@
     align-items: start;
     gap: 1.9rem;
     flex-wrap: wrap;
+  }
+
+  @media (max-width: $screen-small) {
+    margin-top: 1rem;
   }
 }
 
@@ -110,6 +123,10 @@
 
     @media (max-width: $screen-medium-large) {
       width: 18rem;
+    }
+
+    @media (max-width: $screen-small) {
+      width: 30rem;
     }
   }
 
@@ -160,6 +177,9 @@
     // border-radius: 1rem;
     @media (max-width: $screen-medium-large) {
       font-size: 0.8rem;
+    }
+    @media (max-width: $screen-small) {
+      font-size: 1.2rem;
     }
   }
 

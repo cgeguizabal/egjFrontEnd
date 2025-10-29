@@ -19,6 +19,10 @@
       background: linear-gradient(to bottom, rgba(0, 0, 0, 2), transparent);
       pointer-events: none;
       z-index: 0;
+
+      @media (max-width: $screen-small) {
+        height: 22%;
+      }
     }
 
     @media (min-width: 1920px) {
@@ -27,6 +31,12 @@
 
     @media (max-width: $screen-medium) {
       background-image: url("../../assets/images/TourExpeditions-Background-Medium.png");
+    }
+    @media (max-width: $screen-tablet) {
+      background-image: url("../../assets/images/TourExpeditions-Background-Tablet.png");
+    }
+    @media (max-width: $screen-small) {
+      background-image: url("../../assets/images/TourExpeditions-Background-Mobile.png");
     }
   }
 }

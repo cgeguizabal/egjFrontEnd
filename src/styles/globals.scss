@@ -49,9 +49,9 @@ body {
 
   @media (max-width: $screen-medium) {
     grid-template-columns:
-      [full-start] minmax(4rem, 1fr)
-      [center-start] repeat(4, [col-start] minmax(3rem, 10rem) [col-end])
-      [center-end] minmax(4rem, 1fr) [full-end];
+      [full-start] minmax(4rem, 5rem)
+      [center-start] repeat(6, [col-start] minmax(3rem, 10rem) [col-end])
+      [center-end] minmax(4rem, 5rem) [full-end];
   }
 
   @media (max-width: $screen-small) {
@@ -63,7 +63,7 @@ body {
   }
 
   grid-template-rows:
-    [full-start] minmax(6rem, 1fr)
+    [full-start] minmax(4rem, 9rem)
     [center-start] repeat(18, [row-start] minmax(8rem, auto) [row-end])
-    [center-end] minmax(1.5rem, 1fr) [full-end];
+    [center-end] minmax(4rem, 9rem) [full-end];
 }

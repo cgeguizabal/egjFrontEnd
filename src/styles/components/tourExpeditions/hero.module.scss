@@ -10,6 +10,15 @@
     @media (min-width: $screen-xl) {
       align-self: center;
     }
+    @media (max-width: $screen-medium) {
+      grid-column: 2 / 6;
+    }
+
+    @media (max-width: $screen-small) {
+      grid-column: 2;
+      grid-row: 2 / 5;
+      align-self: center;
+    }
   }
 
   &_title {
@@ -23,6 +32,10 @@
     @media (max-width: $screen-medium-large) {
       font-size: 4.5rem;
       margin-top: 30%;
+    }
+    @media (max-width: $screen-small) {
+      margin-top: 0;
+      text-align: center;
     }
   }
 
@@ -43,6 +56,13 @@
     font-family: "Karla", sans-serif;
     margin-top: 1rem;
     max-width: 600px;
+
+    @media (max-width: $screen-small) {
+      margin-top: 0;
+      text-align: center;
+      font-size: 1.4rem;
+    }
+
     // padding: 1.5rem;
     // border-radius: 1rem;
     // background: rgba(20, 20, 20, 0.05);
