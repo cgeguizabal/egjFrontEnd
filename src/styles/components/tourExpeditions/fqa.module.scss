@@ -5,7 +5,12 @@
   grid-row: 14 / 21;
   margin-top: 2rem;
 
-  background: radial-gradient(ellipse at center, rgb(0, 0, 0, 1), transparent);
+  background: radial-gradient(
+    ellipse at center,
+
+    rgb(0, 0, 0, 0.4),
+    transparent
+  );
   // background: linear-gradient(
   //   to bottom,
   //   transparent,
@@ -34,6 +39,7 @@
     font-weight: 700;
     text-transform: uppercase;
     text-align: center;
+
     @media (max-width: $screen-medium) {
       font-size: 2.2rem;
     }
@@ -42,11 +48,15 @@
       font-size: 1.7rem;
     }
   }
+
   &_description {
     margin-top: 0.3rem;
     font-size: 1.7rem;
     color: var(--Secondary-colour);
     text-align: center;
+    @media (min-width: $screen-xl) {
+      font-size: 1.9rem;
+    }
     @media (max-width: $screen-medium) {
       font-size: 1.5rem;
     }

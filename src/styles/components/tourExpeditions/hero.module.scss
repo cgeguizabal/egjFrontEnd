@@ -38,6 +38,10 @@
       text-align: center;
       font-size: 4rem;
     }
+
+    @media (max-width: $screen-small-375) {
+      font-size: 3.8rem;
+    }
     @media (max-width: $screen-small-360) {
       font-size: 3.7rem;
     }

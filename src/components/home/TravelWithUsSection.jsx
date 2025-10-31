@@ -156,7 +156,9 @@ export default function TravelWithUsSection() {
       </motion.article>
 
       <div className={travel.button_container}>
-        <button className={travel.button}>SEE TOURS</button>
+        <a href="/tour" className={travel.button}>
+          SEE TOURS
+        </a>
       </div>
     </motion.section>
   );

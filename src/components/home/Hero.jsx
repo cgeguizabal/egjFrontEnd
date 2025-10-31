@@ -54,7 +54,7 @@ const Hero = () => {
         key="Line"
         className={heroSection.hr}
       />
-      <motion.button
+      <motion.a
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
@@ -62,11 +62,12 @@ const Hero = () => {
           y: { duration: 0.9, ease: "easeInOut" },
           opacity: { duration: 1.5, ease: "easeOut" },
         }}
+        href="/tour"
         key="Button"
         className={heroSection.button}
       >
         BOOK TOUR
-      </motion.button>
+      </motion.a>
     </motion.section>
   );
 };

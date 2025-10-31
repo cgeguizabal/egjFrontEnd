@@ -42,8 +42,13 @@ function Footer() {
           <h4 className={footer.quick_links_title}>Quick Links</h4>
           <div className={footer.quick_links_container}>
             <ul className={footer.quick_links}>
-              <li>Home</li>
-              <li>Tour Expeditions</li>
+              <li>
+                <a href="/">Home</a>{" "}
+              </li>
+
+              <li>
+                <a href="/tour">Tour Expeditions</a>
+              </li>
               <li>Experience</li>
             </ul>
             <ul className={footer.quick_links}>
