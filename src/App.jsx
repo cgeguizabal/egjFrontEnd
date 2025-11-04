@@ -7,6 +7,7 @@ import { getUser } from "./assets/API/Services/UserService";
 import useAuthStore from "./store/auth";
 import Footer from "./components/Footer";
 import TourExpeditioins from "./pages/TourExpeditioins";
+import Experiences from "./pages/Experiences";
 // import Navbar from "./components/NavBar";
 function App() {
   const [token, setToken] = useState(null);
@@ -54,6 +55,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/tour" element={<TourExpeditioins />} />
+          <Route path="/experiences" element={<Experiences />} />
         </Routes>
         <Footer />
       </main>
