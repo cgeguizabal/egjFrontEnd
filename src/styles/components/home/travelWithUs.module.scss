@@ -264,7 +264,11 @@
 
   &:hover {
     cursor: pointer;
-    background: var(--Primary-colour);
+    background: linear-gradient(
+      to right,
+      var(--Primary-colour),
+      var(--Primary-colour)
+    );
     transform: scale(1.1);
   }
 }
