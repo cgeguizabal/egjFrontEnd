@@ -58,17 +58,7 @@ function HeroSection() {
           key="Line"
           className={experienceHero.hr}
         />
-        <motion.a
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, margin: "-2%" }}
-          transition={{
-            delay: 0.1,
-            y: { duration: 0.5, ease: "easeInOut" },
-            opacity: { duration: 1.2, ease: "easeOut" },
-          }}
-          className={experienceHero.button}
-        >
+        <motion.a href="/tour" className={experienceHero.experience_button}>
           Book Now
         </motion.a>
       </motion.div>
