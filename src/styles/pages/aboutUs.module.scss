@@ -1,0 +1,8 @@
+@use "../variables.scss" as *;
+
+.about {
+  &_container {
+    min-height: 100vh;
+    background-color: #000000;
+  }
+}

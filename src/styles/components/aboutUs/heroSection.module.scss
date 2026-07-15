@@ -1,0 +1,243 @@
+@use "../../../styles/variables.scss" as *;
+
+.hero {
+  &_container {
+    grid-column: 1 / -1;
+    grid-row: 1 / 7;
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+      url("../../../assets/images/AboutUsHeroImage.webp");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(3rem, 1fr));
+    grid-template-rows: repeat(8, minmax(5rem, 1fr));
+    position: relative;
+
+    @media (max-width: $screen-small) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(8, minmax(4rem, auto));
+    }
+
+    /* top fade */
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 45%;
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0.85) 50%,
+        transparent 100%
+      );
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* bottom + sides fade */
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, transparent 50%, #000 100%),
+        linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.45) 0%,
+          transparent 40%,
+          transparent 60%,
+          rgba(0, 0, 0, 0.2) 100%
+        );
+      pointer-events: none;
+      z-index: 0;
+    }
+  }
+
+  &_content {
+    grid-row: 2 / 7;
+    grid-column: 2 / 8;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 7rem;
+
+    @media (max-width: $screen-medium-large) {
+      grid-column: 2 / 10;
+    }
+
+    @media (max-width: $screen-medium) {
+      grid-column: 1 / -1;
+      padding: 0 2.5rem;
+      margin-top: 5rem;
+    }
+
+    @media (max-width: $screen-tablet) {
+      margin-top: 4rem;
+      padding: 0 2rem;
+    }
+
+    @media (max-width: $screen-small) {
+      grid-row: 3 / 9;
+      grid-column: 1 / -1;
+      padding: 0 1.2rem;
+      margin-top: 2rem;
+      gap: 0.65rem;
+      overflow: hidden;
+    }
+  }
+
+  &_eyebrow {
+    font-family: "Karla", sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.25rem;
+    color: var(--Tertiary-colour);
+    text-transform: uppercase;
+
+    @media (max-width: $screen-small) {
+      font-size: 0.75rem;
+      letter-spacing: 0.15rem;
+    }
+  }
+
+  &_title {
+    font-family: chivo, sans-serif;
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1.05;
+    color: var(--Secondary-colour);
+
+    @media (max-width: $screen-medium-large) {
+      font-size: 5.5rem;
+    }
+
+    @media (max-width: $screen-medium) {
+      font-size: 4.5rem;
+    }
+
+    @media (max-width: $screen-tablet) {
+      font-size: 4rem;
+    }
+
+    @media (max-width: $screen-small) {
+      font-size: 3.8rem;
+    }
+
+    @media (max-width: $screen-small-414) {
+      font-size: 3.2rem;
+    }
+
+    @media (max-width: $screen-small-375) {
+      font-size: 2.9rem;
+    }
+
+    @media (max-width: $screen-small-360) {
+      font-size: 2.6rem;
+    }
+
+    &_highlight {
+      background: linear-gradient(to top, #1e9146, #79a81c, #7ea15b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+    }
+  }
+
+  &_hr {
+    border: none;
+    height: 3px;
+    background: linear-gradient(to right, rgba(126, 161, 91, 0.8), transparent);
+    width: 60%;
+    margin: 0;
+
+    @media (max-width: $screen-small) {
+      width: 80%;
+    }
+  }
+
+  &_description {
+    font-family: "Karla", sans-serif;
+    font-size: 1.2rem;
+    color: rgba(244, 238, 217, 0.8);
+    line-height: 1.75;
+    max-width: 44rem;
+
+    @media (max-width: $screen-medium) {
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: $screen-small) {
+      font-size: 1rem;
+      max-width: 100%;
+      word-break: break-word;
+    }
+  }
+
+  &_buttons {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-top: 0.4rem;
+    flex-wrap: wrap;
+
+    @media (max-width: $screen-small) {
+      gap: 0.8rem;
+    }
+  }
+
+  &_btn_primary {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    font-family: "Karla", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    background: linear-gradient(to right, #b38705, #f0c02d, #f7e27a);
+    color: rgba(0, 0, 0, 0.85);
+    text-decoration: none;
+    cursor: pointer;
+    transition: $transition-duration;
+
+    @media (max-width: $screen-small) {
+      font-size: 1rem;
+      padding: 0.65rem 1.5rem;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 28px rgba(240, 192, 45, 0.35);
+    }
+  }
+
+  &_btn_secondary {
+    display: inline-block;
+    padding: 0.73rem 2rem;
+    border-radius: 0.5rem;
+    font-family: "Karla", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    background: transparent;
+    color: var(--Secondary-colour);
+    border: 1.5px solid rgba(244, 238, 217, 0.5);
+    text-decoration: none;
+    cursor: pointer;
+    transition: $transition-duration;
+
+    @media (max-width: $screen-small) {
+      font-size: 1rem;
+      padding: 0.63rem 1.5rem;
+    }
+
+    &:hover {
+      border-color: var(--Secondary-colour);
+      background: rgba(244, 238, 217, 0.08);
+      transform: scale(1.05);
+    }
+  }
+}

@@ -1,0 +1,347 @@
+@use "../../../styles/variables.scss" as *;
+
+/* ─── Section wrapper ────────────────────────────────────────────── */
+.gallery {
+  &_section {
+    grid-column: 1 / -1;
+    grid-row: 6 /16;
+    padding: 3rem 4rem 3rem 4rem;
+    background: transparent;
+
+    @media (max-width: $screen-medium) {
+      padding: 4rem 2.5rem 3rem;
+    }
+
+    @media (max-width: $screen-small) {
+      padding: 3rem 1.2rem 2.5rem;
+    }
+  }
+
+  /* ─── Header ─────────────────────────────────────────────────── */
+  &_header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  &_title {
+    font-family: chivo, sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 0.5rem;
+    background: linear-gradient(to top, #1e9146, #79a81c, #7ea15b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+
+    @media (max-width: $screen-small) {
+      font-size: 2rem;
+      letter-spacing: 0.3rem;
+    }
+  }
+
+  &_subtitle {
+    font-family: "Karla", sans-serif;
+    font-size: 1.25rem;
+    color: var(--Secondary-colour);
+    margin-top: 0.6rem;
+    opacity: 0.8;
+  }
+
+  &_hr {
+    border: none;
+    height: 5px;
+    background: linear-gradient(to right, transparent, white, transparent);
+    width: 60%;
+    margin: 1.2rem auto 0;
+  }
+
+  /* ─── Loading dots ───────────────────────────────────────────── */
+  &_loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 6rem 0;
+  }
+
+  &_loading_dot {
+    width: 0.9rem;
+    height: 0.9rem;
+    border-radius: 50%;
+    background: var(--Primary-colour);
+    animation: bounce 1.2s infinite ease-in-out;
+
+    &:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+    &:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+  }
+
+  /* ─── Masonry grid ───────────────────────────────────────────── */
+  &_grid {
+    columns: 4;
+    column-gap: 1.2rem;
+
+    @media (max-width: $screen-medium-large) {
+      columns: 3;
+    }
+
+    @media (max-width: $screen-medium) {
+      columns: 2;
+    }
+
+    @media (max-width: $screen-small) {
+      columns: 1;
+    }
+  }
+
+  /* ─── Individual item ────────────────────────────────────────── */
+  &_item {
+    break-inside: avoid;
+    margin-bottom: 1.2rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(20, 20, 20, 0.4);
+
+    transition: $transition-duration;
+
+    &:hover {
+      transform: scale(1.02);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+
+      .gallery_item_overlay {
+        opacity: 1;
+      }
+
+      .gallery_img {
+        filter: brightness(0.75);
+      }
+    }
+  }
+
+  &_img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: filter 0.35s ease;
+  }
+
+  /* ─── Item overlay (like button) ─────────────────────────────── */
+  &_item_overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 0.8rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.55), transparent 60%);
+    border-radius: 0.75rem;
+  }
+}
+
+/* ─── Size helpers for CSS columns (visual weight variation) ── */
+.img_large {
+}
+.img_medium {
+}
+.img_small {
+}
+.img_tall {
+}
+/* CSS columns handles height naturally via the image aspect ratio.
+   These classes exist for future JS-driven masonry if needed. */
+
+/* ─── Like button ─────────────────────────────────────────────── */
+.like_btn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(10, 10, 10, 0.55);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 2rem;
+  padding: 0.35rem 0.75rem;
+  color: var(--Secondary-colour);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: $transition-duration;
+
+  svg {
+    font-size: 1rem;
+    transition: $transition-duration;
+  }
+
+  &:hover {
+    background: rgba(30, 145, 70, 0.55);
+    border-color: var(--Primary-colour);
+    transform: scale(1.08);
+  }
+
+  &_active {
+    color: #ef4444;
+    svg {
+      color: #ef4444;
+    }
+
+    &:hover {
+      background: rgba(239, 68, 68, 0.25);
+      border-color: #ef4444;
+    }
+  }
+}
+
+.like_count {
+  font-family: "Karla", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* ─── Pagination ──────────────────────────────────────────────── */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 3.5rem;
+  flex-wrap: wrap;
+
+  &_arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: var(--Secondary-colour);
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: $transition-duration;
+
+    &:hover:not(:disabled) {
+      background: linear-gradient(to right, #1e9146, #79a81c, #7ea15b);
+      border-color: transparent;
+      transform: scale(1.1);
+    }
+
+    &:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+  }
+
+  &_dot {
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: var(--Secondary-colour);
+    font-family: "Karla", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: $transition-duration;
+
+    &:hover {
+      background: rgba(126, 161, 91, 0.35);
+      border-color: var(--Primary-colour);
+      transform: scale(1.1);
+    }
+
+    &_active {
+      background: linear-gradient(to right, #1e9146, #79a81c, #7ea15b);
+      border-color: transparent;
+      color: white;
+      transform: scale(1.1);
+    }
+  }
+}
+
+/* ─── Lightbox modal ──────────────────────────────────────────── */
+.modal_backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  background: rgba(5, 5, 5, 0.88);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.modal_figure {
+  position: relative;
+  max-width: min(90vw, 72rem);
+  max-height: 90vh;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.7);
+  background: rgb(12, 12, 12);
+}
+
+.modal_img {
+  display: block;
+  width: 100%;
+  max-height: 82vh;
+  object-fit: contain;
+}
+
+.modal_close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: rgba(10, 10, 10, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--Secondary-colour);
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: $transition-duration;
+
+  &:hover {
+    background: linear-gradient(to right, #1e9146, #79a81c, #7ea15b);
+    border-color: transparent;
+    transform: scale(1.1);
+  }
+}
+
+.modal_footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.75rem 1rem;
+  background: rgba(10, 10, 10, 0.6);
+}
+
+/* ─── Bounce animation for loading dots ──────────────────────── */
+@keyframes bounce {
+  0%,
+  80%,
+  100% {
+    transform: scale(0.6);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
